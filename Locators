@@ -1,0 +1,2 @@
+for apk file run C:\Users\dell\AppData\Local\Android\Sdk\tools\bin\uiautomatorviewer.bar
+select element get id or text or class
