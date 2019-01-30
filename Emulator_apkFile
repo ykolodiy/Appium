@@ -1,0 +1,66 @@
+https://www.toolsqa.com/mobile-automation/appium/appium-tutorial/
+1 install JDK 
+2 install Android SDK to have Emulator
+3 install nodejs
+4 install .net
+5 install Appium
+6 in Eclipse add jars > seleniumm tesnng, gson, 
+7 get Apk file and paste in the project root dir
+8 Run the script
+
+package package1;
+
+import java.io.File;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class APP1 {
+	//create instance for appium driver
+	AppiumDriver driver;
+	
+	// setup capabilities
+	@BeforeClass
+	public void Setup() throws Exception {
+		
+
+		 File classpathRoot = new File(System.getProperty("user.dir"));
+		 // put apk file in the project Root directory
+		 File appDir = new File(classpathRoot, "/Apps/Amazon/");
+		 File app = new File(appDir, "in.amazon.mShop.android.shopping.apk");
+		
+		DesiredCapabilities cap = new DesiredCapabilities();
+		
+		cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Android emulator");
+    // get name of available emulator, run AVD in Android Studio
+		cap.setCapability("avd", "Pixel_API_26");
+		cap.setCapability("app", app.getAbsolutePath());
+		cap.setCapability("appPackage", "in.amazon.mShop.android.shopping");
+		cap.setCapability("appActivity", "com.amazon.mShop.home.HomeActivity");
+		
+		
+		
+		driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+		//driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);
+		 driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+	}
+	
+	
+
+
+
+@Test
+  public void f() {
+	  
+	  Assert.assertNotNull(driver.getContext());
+	  System.out.println(driver.getOrientation());
+  }
+}
