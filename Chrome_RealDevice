@@ -27,6 +27,10 @@ capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME)
 capabilities.setCapability(MobileCapabilityType.PLATFORM,Platform.ANDROID);
 // we need to define platform name
 capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
+
+	// connect phone via usb, grant access
+	//!!!!!! get device name by cmd > adb devices
+	// Set the device name as well (paste name 4AV7N18508001965)
 // Set the device name as well (you can give any name)
 capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Lg");
 
