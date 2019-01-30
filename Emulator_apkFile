@@ -6,6 +6,7 @@ https://www.toolsqa.com/mobile-automation/appium/appium-tutorial/
 5 install Appium
 6 in Eclipse add jars > seleniumm tesnng, gson, 
 7 get Apk file and paste in the project root dir
+7a Start Emulator and Start Appium
 8 Run the script
 
 package package1;
@@ -62,5 +63,11 @@ public class APP1 {
 	  
 	  Assert.assertNotNull(driver.getContext());
 	  System.out.println(driver.getOrientation());
+	  
+	  //locators
+	  
+	  
+	  
+	  
   }
 }
