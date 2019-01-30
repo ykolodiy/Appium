@@ -23,10 +23,10 @@ public class NewTest {
 	// Create object of  DesiredCapabilities class and specify android platform
 	DesiredCapabilities capabilities=DesiredCapabilities.android();
 
-	// set the capability to execute test in chrome browser
+	// set the capability to execute test in chrome browser, or if you test apk need to put apk data :)
 	capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
-	capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android emulator");
 	
+	capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android emulator");
 	// get this from android studion AVG list of emulators
 	capabilities.setCapability("avd", "Pixel_API_26");
 	
