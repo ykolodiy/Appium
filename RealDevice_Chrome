@@ -35,7 +35,15 @@ capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
 capabilities.setCapability(MobileCapabilityType.DEVICE_NAME,"Lg");
 
 // set the android version as well 
-capabilities.setCapability(MobileCapabilityType.VERSION,"5.0.2");
+//capabilities.setCapability(MobileCapabilityType.VERSION,"5.0.2");
+
+
+//if needed
+// get correct ChromeDriver for Chrome!!! th elist http://appium.io/docs/en/writing-running-appium/web/chromedriver/
+	capabilities.setCapability("chromedriverExecutable", "C:\\Users\\dell\\Downloads\\chromedriver231\\chromedriver.exe");
+	
+
+
 
 // Create object of URL class and specify the appium server address
 URL url= new URL("http://127.0.0.1:4723/wd/hub");
