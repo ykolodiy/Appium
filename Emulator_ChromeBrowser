@@ -1,0 +1,81 @@
+package package1;
+
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileCapabilityType;
+
+public class NewTest {
+	WebDriver driver;
+	@BeforeClass
+	public void Setup() throws Exception {
+	
+	// Create object of  DesiredCapabilities class and specify android platform
+	DesiredCapabilities capabilities=DesiredCapabilities.android();
+
+	// set the capability to execute test in chrome browser
+	 capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
+
+	
+	
+	
+	
+
+	
+	 
+	 
+	 
+	
+// Emulator > Chrome Browser
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\dell\\IT\\eclipse\\jars\\chromedriver.exe");
+	capabilities.setCapability(MobileCapabilityType.BROWSER_NAME,BrowserType.CHROME);
+
+	capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android emulator");
+	capabilities.setCapability("avd", "Pixel_API_26");
+	
+	// get correct ChromeDriver for Chrome!!! th elist http://appium.io/docs/en/writing-running-appium/web/chromedriver/
+	capabilities.setCapability("chromedriverExecutable", "C:\\Users\\dell\\Downloads\\chromedriver231\\chromedriver.exe");
+	
+	
+	
+	
+	
+	
+	
+	// Create object of URL class and specify the appium server address
+	URL url= new URL("http://127.0.0.1:4723/wd/hub");
+
+	// Create object of  AndroidDriver class and pass the url and capability that we created
+	driver = new AndroidDriver(url, capabilities);
+	
+	}
+	
+	
+	
+	
+	
+  @Test
+  public void f() {
+	  
+	// Open url
+	  driver.get("http://www.facebook.com");
+
+	  // print the title
+	  System.out.println("Title "+driver.getTitle());
+
+
+
+	  // close the browser
+	  driver.close();
+  }
+}
