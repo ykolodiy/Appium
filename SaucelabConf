@@ -14,3 +14,6 @@ download
 
 https://github.com/appium/appium-desktop/releases
 https://github.com/appium/appium-inspector/releases
+
+on mac unlock those 2 apps like:
+xattr -d com.apple.quarantine Appium\ Inspector.app
