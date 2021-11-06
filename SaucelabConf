@@ -1,0 +1,16 @@
+in appium-inspector saucelab add conf:
+
+{
+  "platformName": "iOS",
+  "appium:app": "storage:filename=SalesforceApp-Simulator-230.000-iOS.zip",
+  "appium:deviceName": "iPhone 12 Simulator",
+  "appium:platformVersion": "14.5",
+  "appium:appiumVersion": "1.20.1"
+}
+
+
+
+download
+
+https://github.com/appium/appium-desktop/releases
+https://github.com/appium/appium-inspector/releases
